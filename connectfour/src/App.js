@@ -28,20 +28,20 @@ class Board extends Component {
       boardState: new Array(7).fill(new Array(6).fill(null)),
       //starts with the red player
       playerTurn: 'Red',
-      //game hasnt started yet
-      gameSelected: false,
       //no winner yet
-      winner: ''
+      winner: '',
+      //all spaces are empty 
+      full: 0
     }
   }
 
   //when user starts a game
   startGame(){
     this.setState({
-      //game has been started
-       gameSelected: true, 
        //board is empty 
-       boardState: new Array(7).fill(new Array(6).fill(null))
+       boardState: new Array(7).fill(new Array(6).fill(null)),
+       //full is set back to zero
+       full:0
     })
   }
 
@@ -58,11 +58,13 @@ class Board extends Component {
       newColumn[newColumn.indexOf(null)] = this.state.playerTurn
       newColumn.reverse()
       //once move is made the board is updated fully (the boardCopy becomes the actual Board)
-      //and it becomes the next players turn 
+      //and it becomes the next players turn, full is incremented by one 
       this.setState({
         playerTurn: (this.state.playerTurn === 'Red') ? 'Yellow' : 'Red',
-        boardState: boardCopy
+        boardState: boardCopy,
+        full: this.state.full+1
       })
+      console.log(this.state.full); 
     }
 
   }
@@ -103,16 +105,16 @@ class Board extends Component {
     )
 
     //displays board made of columns, 
-    //possibly shows winner meassage and then the button to start a new game 
+    //possibly shows winner meassage when game is won
+    //then the button to start a new game when game is won, board if full, or game hasn't been selected 
     return (
       <div>
-        {this.state.gameSelected &&
           <div className="Board">
             {columns}
           </div>
-        }
+      
         <div className={winnerMessageStyle}>{this.state.winner}</div>
-        {(!this.state.gameSelected || this.state.winner !== '') &&
+        {( this.state.winner !== ''|| this.state.full === 42) &&
           <div>
             <button onClick={() => this.startGame()}>Play a New Game</button>
           </div>
