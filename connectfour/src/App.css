@@ -4,7 +4,7 @@
 
 /*header for game title*/ 
 .App-header {
-  background-color: #5689db;
+  background-color: #a0c4ff;
   height: 50px;
   padding: 20px;
   color: white;
@@ -23,8 +23,8 @@
 
 /*buttons used to start game*/
 button {
-    background-color: #5689db;
-    border: 1px solid #5689db;
+    background-color: #a0c4ff;
+    border: 1px solid #a0c4ff;
     border-radius: 3px;
     display: inline-block;
     color: #FFF;
@@ -39,7 +39,7 @@ button {
 
 /*when hovering over button the colour changes*/
 button:hover {
-    background-color: lightblue;
+    background-color: #bdd6ff;
 }
 
 /*board and columns used for gameplay*/
@@ -55,7 +55,7 @@ button:hover {
   padding: 8px;
   min-width: 30px;
   min-height: 30px;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid #a0c4ff;
 }
 
 /*player token, animates for when move is maked*/
@@ -70,13 +70,13 @@ button:hover {
 
 /*player one is red*/
 .Red {
-  background-color: #FF456C;
+  background-color: #ffadad;
   transform: translateY(400px);
 }
 
 /*player two is yellow*/
 .Yellow {
-  background-color: #ddee4ae0;
+  background-color: #f6f8aa;
   transform: translateY(400px);
 }
 
