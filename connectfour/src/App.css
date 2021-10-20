@@ -2,37 +2,94 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/*header for game title*/ 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #5689db;
+  height: 50px;
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-intro {
+  font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*game is where board is displayed*/ 
+.Game {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/*buttons used to start game*/
+button {
+    background-color: #5689db;
+    border: 1px solid #5689db;
+    border-radius: 3px;
+    display: inline-block;
+    color: #FFF;
+    font-size: 12pt;
+    padding: 7px 28px;
+    text-decoration: none;
+    margin: 5px;
+    transition: all 0.5s;
+    max-width: 160px;
+    min-width: 160px;
+}
+
+/*when hovering over button the colour changes*/
+button:hover {
+    background-color: lightblue;
+}
+
+/*board and columns used for gameplay*/
+.Board {
+  display: flex;
+}
+
+.Column {
+}
+
+/*space for where player tokens can go*/ 
+.Space {
+  padding: 8px;
+  min-width: 30px;
+  min-height: 30px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+/*player token, animates for when move is maked*/
+.Space div {
+  position: relative;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 15px;
+  top: -400px;
+  transition: transform 0.5s;
+}
+
+/*player one is red*/
+.Red {
+  background-color: #FF456C;
+  transform: translateY(400px);
+}
+
+/*player two is yellow*/
+.Yellow {
+  background-color: #ddee4ae0;
+  transform: translateY(400px);
+}
+
+/*message for when someone wins the game is usually blank*/ 
+.winnerMessage {
+  margin: 20px;
+  font-size: 0pt;
+  font: 12pt;
+  opacity: 0;
+}
+
+/*when winner happens the message appears*/ 
+.appear {
+  opacity: 1;
+  font-size: 20pt;
 }
